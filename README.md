@@ -32,7 +32,7 @@ printf("%f %f %f\n", valueA, valueB, valueC);
 ```
 
 In the plotty directory, edit config.json to suit your needs:
-```
+```json
 {
     "inputStream": "simulation",
     "baud": 921600,
@@ -53,26 +53,26 @@ In the plotty directory, edit config.json to suit your needs:
 * In the `"channels"` section, you specifiy the `"legend"`-string to be printed in your plot and the `"color"` of the plotted line (for each channel).
 
 You can add or remove channels to suite your needs by adding or removing lines from the `"channels"` list.
-Currently, the following colors are supported: yellow, orange, red, magenta, violet, blue, cyan, green.
+Currently, the following colors are supported: `yellow`, `orange`, `red`, `magenta`, `violet`, `blue`, `cyan`, `green`.
 
 ## static data analysis
 
-If you just want to have a look at a huge set of data like an exported .csv file, just point to the file
+If you just want to have a look at a huge set of static data like an exported .csv file, just point to the file:
 ```
 ...
     "inputStream": "./testdata.csv"
 ...
 ```
-NOTE: To plot files, the data has to be space separated floating point values.
-Make sure to not have more values per line than channels configured in your config.json.
+__NOTE__: To plot files, the data has to be space separated floating point values.
+Make sure to __not__ have more values per line than channels configured in your config.json.
 
 ## dependencies
 
-python3
-pyqtgraph
-pyqt4
-numpy
-pyserial (required on Windows only)
+* python3
+* pyqtgraph
+* pyqt4
+* numpy
+* pyserial (required on Windows only)
 
 ## credits
 * Ethan Schoonover for creating the famous [solarized color pallete](http://ethanschoonover.com/solarized)
