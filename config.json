@@ -1,0 +1,12 @@
+{
+    "inputStream": "simulation",
+    "baud": 921600,
+    "sampleRate": 1000,
+    "bufferSize": 10000,
+    "channels":
+    [
+	{"legend": "Temp[°C]",       "color": "orange"},
+	{"legend": "Pressue[hPa]",   "color": "green"},
+	{"legend": "Humidity[%rel]", "color": "cyan"}
+    ]
+}
