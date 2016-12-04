@@ -32,7 +32,7 @@ printf("%f %f %f\n", valueA, valueB, valueC);
 ```
 
 In the plotty directory, edit config.json to suit your needs:
-```json
+```javascript
 {
     "inputStream": "simulation",
     "baud": 921600,
