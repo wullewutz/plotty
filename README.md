@@ -1,6 +1,6 @@
 # plotty - realtime (embedded) data visualization made easy
 
-![plotty at work](docs/screencast.gif)
+![plotty at work](doc/screencast.gif)
 
 * Ever wanted to inspect some sensor data captured by your arduino or other embedded system in realtime?
 * Ever wanted to fine-tune a PID controller but couldn't understand why it keeps oscillating?
