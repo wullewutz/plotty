@@ -19,7 +19,7 @@ python plotty
 ```
 * Move the plott area with your left mouse button.
 * Zoom into details with your mouse wheel.
-* Fancy X and Z axis zooming with your right mouse button - try it!
+* Fancy X- and Y-axis zooming with your right mouse button - try it and get addicted!
 * Reset to normal by clicking on the small "A" at the bottom left if you got lost in your data ;)
 
 ## configuration
