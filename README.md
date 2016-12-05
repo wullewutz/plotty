@@ -14,8 +14,8 @@ To have a quick look at plotty, just clone the repo and make sure you've install
 the dependencies listed below.
 Then start plotty in simulation mode:
 ```
-cd plotty
-python plotty
+$ cd plotty
+$ python main.py
 ```
 * Move the plott area with your left mouse button.
 * Zoom into details with your mouse wheel.
