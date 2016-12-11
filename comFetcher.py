@@ -9,7 +9,7 @@ class ComFetcher(threading.Thread):
     def __init__(self, chans, comPort, baud):
         threading.Thread.__init__(self)
         self.chans = chans
-        self.stream = Serial(comPort, baud, timeout=0))
+        self.stream = Serial(comPort, baud, timeout=0)
         self.stream.readline() #read and forget to avoid data-glitches on first read.
         self.setDaemon(True)
         self.start()
