@@ -1,6 +1,6 @@
 # plotty - realtime (embedded) data visualization made easy
 
-![plotty at work](doc/screencast.gif)
+![plotty at work](docs/screencast.gif)
 
 * Ever wanted to inspect some sensor data captured by your arduino or other embedded system in realtime?
 * Ever wanted to fine-tune a PID controller but couldn't understand why it keeps oscillating?
@@ -38,6 +38,7 @@ In the plotty directory, edit `config.json` to suit your needs:
     "baud": 921600,
     "sampleRate": 1000,
     "bufferSize": 10000,
+    "theme": "solarizedDark",
     "channels":
     [
         {"legend": "Temp[°C]",       "color": "orange"},
@@ -50,10 +51,23 @@ In the plotty directory, edit `config.json` to suit your needs:
 * The `"baud"`-rate has only to be specified correcly on Windows.
 * `"sampleRate"` is the number of lines you transmit per second.
 * `"bufferSize"` is the depth of data buffer of each channel. Reduce this, if your PC is to slow...
+* `"theme"` spezifies the theme. Currently there are `solarizedDark` and `solarizedDark`.  
 * In the `"channels"` section, you specifiy the `"legend"`-string to be printed in your plot and the `"color"` of the plotted line (for each channel).
 
 You can add or remove channels to suite your needs by adding or removing lines from the `"channels"` list.
 Currently, the following colors are supported: `yellow`, `orange`, `red`, `magenta`, `violet`, `blue`, `cyan`, `green`.
+
+## creating own themes
+
+Creating own themes is easy as well: Just dublicate one of the `theme.json` files within the `/themes` folder 
+and change the RGB values to your wishes. 
+Then add the name of the new theme to the `config.json` like this 
+(just add the name of the theme without the .json extension):
+```
+...
+    "theme": "myTheme"
+...
+```
 
 ## static data analysis
 

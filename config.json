@@ -8,5 +8,6 @@
 	{"legend": "Temp[°C]",       "color": "orange"},
 	{"legend": "Pressue[hPa]",   "color": "green"},
 	{"legend": "Humidity[%rel]", "color": "cyan"}
-    ]
+    ],
+    "theme": "solarizedDark"
 }

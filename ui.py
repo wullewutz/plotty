@@ -2,27 +2,26 @@
 
 import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtGui
-from solarized import solarized as sol
 from math import log10, pow
 import sys
 
 
 class UI():
-    def __init__(self, chans):
+    def __init__(self, chans, theme):
         self.app  = QtGui.QApplication(sys.argv)
         self.win  = QtGui.QWidget()
         palette = self.win.palette()
         palette.setColor(self.win.backgroundRole(),
-                         QtGui.QColor(sol['base03'][0],
-                                      sol['base03'][1],
-                                      sol['base03'][2]))
+                         QtGui.QColor(theme['background'][0],
+                                      theme['background'][1],
+                                      theme['background'][2]))
         palette.setColor(self.win.foregroundRole(),
-                         QtGui.QColor(sol['base0'][0],
-                                      sol['base0'][1],
-                                      sol['base0'][2]))
+                         QtGui.QColor(theme['foreground'][0],
+                                      theme['foreground'][1],
+                                      theme['foreground'][2]))
         self.win.setPalette(palette)
         self.layout = QtGui.QGridLayout()
-        self.plotter = Plotter(chans)
+        self.plotter = Plotter(chans, theme)
         self.ctrl  = Ctrl(self.plotter.p, len(chans[0]['data']), self.plotter.run, self.plotter.pause)
         self.layout.addWidget(self.ctrl , 2, 1)
         self.layout.addWidget(self.plotter, 1, 1)
@@ -31,9 +30,9 @@ class UI():
         sys.exit(self.app.exec_())
         
 class Plotter(pg.GraphicsWindow):
-    def __init__(self, chans, parent = None):
-        pg.setConfigOption('background', sol['base03'])
-        pg.setConfigOption('foreground', sol['base01'])
+    def __init__(self, chans, theme, parent = None):
+        pg.setConfigOption('background', theme['background'])
+        pg.setConfigOption('foreground', theme['foreground'])
         super(Plotter, self).__init__(parent)
         self.bufSize = len(chans[0]['data'])
         self.chans = chans

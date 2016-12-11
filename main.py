@@ -4,21 +4,23 @@ import os
 import sys
 from pyqtgraph.Qt import QtCore, QtGui
 from ui import UI
-from solarized import solarized as sol
 from collections import deque
 import json
 
 with open('config.json', 'r') as f:
     config = json.load(f)
 
+with open('./themes/'+config['theme']+'.json', 'r') as f:
+    theme = json.load(f)
+
 channels = list()
 for chan in config['channels']:
     channels.append(dict(legend=chan['legend'],
-                         color=sol[chan['color']],
+                         color=theme[chan['color']],
                          data=deque([0.0] * config['bufferSize'])))
 
 if (config['inputStream'] == "simulation"):
-    # just a simulation mode showing white noise on every channel.
+    # just a simulation mode showing some noisy signals on every channel.
     from simFetcher import SimFetcher
     fetcher = SimFetcher(channels)
 elif (os.name == "posix"):
@@ -34,7 +36,7 @@ elif (os.name == "nt"):
 else:
     sys.exit("OS \"{}\" not supported (yet)!".format(os.name))
 
-userInterface = UI(channels)
+userInterface = UI(channels, theme)
 
 if __name__ == '__main__':
     if(sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
