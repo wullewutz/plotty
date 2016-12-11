@@ -51,7 +51,7 @@ In the plotty directory, edit `config.json` to suit your needs:
 * The `"baud"`-rate has only to be specified correcly on Windows.
 * `"sampleRate"` is the number of lines you transmit per second.
 * `"bufferSize"` is the depth of data buffer of each channel. Reduce this, if your PC is to slow...
-* `"theme"` spezifies the theme. Currently there are `solarizedDark` and `solarizedDark`.  
+* `"theme"` specifies the theme. Currently `solarizedDark` and `solarizedLight` are available out of the box.  
 * In the `"channels"` section, you specifiy the `"legend"`-string to be printed in your plot and the `"color"` of the plotted line (for each channel).
 
 You can add or remove channels to suite your needs by adding or removing lines from the `"channels"` list.
@@ -59,7 +59,7 @@ Currently, the following colors are supported: `yellow`, `orange`, `red`, `magen
 
 ## creating own themes
 
-Creating own themes is easy as well: Just dublicate one of the `theme.json` files within the `/themes` folder 
+Creating own themes is easy as well: Just duplicate one of the `theme.json` files within the `/themes` folder 
 and change the RGB values to your wishes. 
 Then add the name of the new theme to the `config.json` like this 
 (just add the name of the theme without the .json extension):
