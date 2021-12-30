@@ -4,7 +4,7 @@
 
 * Ever wanted to inspect some sensor data captured by your arduino or other embedded system in realtime?
 * Ever wanted to fine-tune a PID controller but couldn't understand why it keeps oscillating?
-* Ever wanted to have a look at some recored .csv data but $YOUR_#!"#_SPREADSHEET_APP just sucks at zooming into details?
+* Ever wanted to have a look at some recored .csv data but $YOUR_SPREADSHEET_APP can't zoom in using your mouse?
 
 plotty might just be what you've been looking for.
 
